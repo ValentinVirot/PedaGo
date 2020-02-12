@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PedaGo.Business.Contracts\PedaGo.Business.Contracts.csproj" />
+    <ProjectReference Include="..\PedaGo.Repository.Contracts\PedaGo.Repository.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

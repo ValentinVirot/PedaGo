@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PedaGo.UserMobileApp.Views.HistoryPage"
+             BackgroundColor="#2a2c31">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" VerticalOptions="Start" BackgroundColor="#3B3E42">
+            <Label Text="Historique" TextColor="White" FontSize="20" HorizontalTextAlignment="Center"/>
+        </Frame>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Games}" RowHeight="100" IsEnabled="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Grid.Row="1" HorizontalOptions="Center">
+                                <Frame Padding="2"
+                                       BackgroundColor="#9E8652"
+                                       CornerRadius="20"
+                                       Margin="15, 0, 15, 0">
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="90"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="70"></RowDefinition>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Text="&#xf5eb;"
+                                               Grid.Column="0"
+                                               FontSize="30"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center"
+                                               TextColor="White"
+                                                Margin="10, 0, 0, 0"
+                                               FontFamily="{StaticResource FontAwesomeSolid}"/>
+
+                                        <Label VerticalOptions="Center"
+                                               FontSize="Small"
+                                               Grid.Column="1" 
+                                               TextColor="White"
+                                               Text="{Binding Name}"
+                                               Margin="0, 0, 30, 0"></Label>
+
+                                        <Grid Grid.Column="2" VerticalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="20"></RowDefinition>
+                                                <RowDefinition Height="20"></RowDefinition>
+                                            </Grid.RowDefinitions>
+
+                                            <Label VerticalOptions="Center"
+                                                   FontSize="Small"
+                                                   Grid.Row="0" 
+                                                   TextColor="White"
+                                                   HorizontalOptions="Center"
+                                                   Text="{Binding Distance}"
+                                                   Margin="0, 0, 30, 0"></Label>
+
+                                            <Label VerticalOptions="Center"
+                                                   FontSize="Small"
+                                                   Grid.Row="1" 
+                                                   TextColor="White"
+                                                   HorizontalOptions="Center"
+                                                   Text="{Binding Time}"
+                                                   Margin="0, 0, 30, 0"></Label>
+                                        </Grid>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

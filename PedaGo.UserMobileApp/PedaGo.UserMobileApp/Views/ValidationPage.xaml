@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PedaGo.UserMobileApp.Views.ValidationPage"
+             BackgroundColor="#2a2c31">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" VerticalOptions="Start" BackgroundColor="#3B3E42">
+            <Label Text="Validation étape" TextColor="White" FontSize="20" HorizontalTextAlignment="Center" />
+        </Frame>
+        
+        <Image Source="{Binding TakenPhoto}"
+               Grid.Row="1"
+               Margin="0, 0, 0, 15" />
+
+        <StackLayout Grid.Row="2"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="0, 0, 0, 5">
+
+            <Frame CornerRadius="50"
+                   WidthRequest="300"
+                   Padding="5"
+                   BackgroundColor="#B23993">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="&#xf030;"
+                       TextColor="White"
+                       Grid.Column="0"
+                       FontSize="30"
+                       Margin="10, 0, 0, 0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontFamily="{StaticResource FontAwesomeSolid}" />
+
+                    <Button Grid.Column="1"
+                            Text="Prendre la photo"
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            Command="{Binding Path=TakePhoto}">
+                    </Button>
+                </Grid>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Grid.Row="3"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="0, 0, 0, 5">
+
+            <Frame CornerRadius="50"
+                   WidthRequest="300"
+                   Padding="5"
+                   BackgroundColor="#9E8652">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="&#xf058;"
+                       TextColor="White"
+                       Grid.Column="0"
+                       FontSize="30"
+                       Margin="10, 0, 0, 0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontFamily="{StaticResource FontAwesomeRegular}" />
+
+                    <Button Grid.Column="1"
+                            Text="Valider l'étape"
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            Command="{Binding Path=ValidatePhoto}">
+                    </Button>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentPage>

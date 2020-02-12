@@ -1,0 +1,69 @@
+/* Custom colors */
+.sc-dark-light {
+    background-color: #3b3e42 !important;
+}
+
+.sc-dark {
+    background-color: #282D33 !important;
+}
+
+.sc-kaki {
+    background-color: #9E8652 !important;
+}
+
+.sc-pink {
+    background-color: #B23993 !important;
+}
+
+.border-kaki {
+    border-color: #9E8652 !important;
+}
+
+.border-black {
+    border-color: black !important;
+}
+
+/* Custom classes */
+.round-img {
+    border-radius: 50%;
+}
+
+.round-brand-logo {
+    border-radius: 50%;
+    width: 64px;
+    margin-right: 16px;
+}
+
+.quizz-container {
+    margin-top: 32px;
+    background-color: white;
+    color: #333333;
+}
+
+.sc-btn-mustard {
+    background-color: #9e8652;
+    color: white;
+}
+
+/* General */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #282d33;
+    color: white;
+}
+
+.sc-row {
+    height: 800px;
+}
+
+.sc-item {
+    height: 48px;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}

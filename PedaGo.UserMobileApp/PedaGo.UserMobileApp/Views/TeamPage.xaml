@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PedaGo.UserMobileApp.Views.TeamPage"
+             BackgroundColor="#2a2c31"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" VerticalOptions="Start" BackgroundColor="#3B3E42">
+            <Label Text="Mon équipe" TextColor="White" FontSize="20" HorizontalTextAlignment="Center"/>
+        </Frame>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Players}" RowHeight="100" IsEnabled="False" Margin="10, 0, 10, 0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Frame BackgroundColor="#9E8652" Margin="0, 5, 0, 5" CornerRadius="20">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding Name}"
+                                           TextColor="White"
+                                           FontSize="14"
+                                           Grid.Column="1"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"></Label>
+                                    
+                                    <controls:CircleImage Source="{Binding Url}" Aspect="AspectFit"  Grid.Column="0" Scale="1">
+                                        <controls:CircleImage.WidthRequest>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <On Platform="Android, iOS">200</On>
+                                                <On Platform="WinPhone">200</On>
+                                            </OnPlatform>
+                                        </controls:CircleImage.WidthRequest>
+                                        <controls:CircleImage.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <On Platform="Android, iOS">200</On>
+                                                <On Platform="WinPhone">200</On>
+                                            </OnPlatform>
+                                        </controls:CircleImage.HeightRequest>
+                                    </controls:CircleImage>
+                                </Grid>
+                            </Frame>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PedaGo.UserMobileApp.Views.LoginPage"
+             BackgroundColor="#282d33">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Image Source="Chouette.png" Scale="3" Grid.Row="2"></Image>
+        
+        <StackLayout Grid.Row="4" HorizontalOptions="Center">
+            <Frame CornerRadius="50"
+                   WidthRequest="300"
+                   Padding="10"
+                   BackgroundColor="White"
+                   Margin="0, 20, 0, 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="&#xf007;"
+                       Grid.Column="0"
+                       TextColor="Black"
+                       FontSize="30"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontFamily="{StaticResource FontAwesomeSolid}"/>
+
+                    <Entry Grid.Column="1"
+                           Margin="0, 0, 20, 0"
+                           Placeholder="Nom d'utilisateur"
+                           Text="{Binding Username, Mode=TwoWay}"
+                           BackgroundColor="White"
+                           Visual="Material"></Entry>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="50"
+                   WidthRequest="300"
+                   Padding="10"
+                   BackgroundColor="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="&#xf023;"
+                       TextColor="Black"
+                       Grid.Column="0"
+                       FontSize="30"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontFamily="{StaticResource FontAwesomeSolid}" />
+
+                    <Entry Grid.Column="1"
+                           Placeholder="Mot de passe"
+                           IsPassword="True"
+                           Visual="Material"
+                           Margin="0, 0, 20, 0"
+                           BackgroundColor="White"
+                           Text="{Binding Password, Mode=TwoWay}"></Entry>
+                </Grid>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Grid.Row="5" HorizontalOptions="Center">
+            <Frame CornerRadius="50" WidthRequest="225" Padding="10" BackgroundColor="White">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Path=NavigateHome}"/>
+                </Frame.GestureRecognizers>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="&#xf2f6;"
+                       Grid.Column="0"
+                       FontSize="30"   
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontFamily="{StaticResource FontAwesomeSolid}"/>
+
+                    <Label VerticalOptions="Center"
+                           FontSize="Large"
+                           Grid.Column="1" 
+                           Text="Connexion"
+                           Margin="0, 0, 30, 0"
+                           HorizontalOptions="Center" ></Label>
+                </Grid>
+            </Frame>
+        </StackLayout>
+
+        <Button Grid.Row="7"
+                Visual="Material"
+                Text="Test (ValentinVirot)"
+                Command="{Binding Path=LoginTest}" />
+    </Grid>
+</ContentPage>
